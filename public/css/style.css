@@ -8,6 +8,15 @@ body {
 }
 
 .allergies{
-  color: pink;
+  color: green;
   font-weight: bold;
+}
+
+#order{
+  background-color: black;
+  color: white;
+}
+
+#customer{
+
 }
