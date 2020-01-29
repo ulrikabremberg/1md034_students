@@ -20,6 +20,7 @@ body {
 
 #order{
   background-color: black;
+  line-height: 1.2;
   color: white;
 }
 
@@ -30,8 +31,13 @@ input[type="radio"]:checked {
   box-shadow: 0 0 0 3px black;
 }
 
-input[type]{
+input[type]:hover{
   cursor: pointer;
+  background-color: pink;
+}
+
+input[placeholder]{
+  text-shadow: blue;
 }
 
 select{
@@ -41,4 +47,11 @@ select{
 button:hover{
   background-color: pink;
   cursor:pointer;
+}
+
+table{
+  margin: 0 auto;
+  width: 95%;
+  height: 100%;
+  align-content: center;
 }
