@@ -1,7 +1,13 @@
 body {
     font-family: "Futura";
-    color: green;
+    color:  rgb(2, 50, 20);
     font-size: 1.4em;
     line-height: 2.0;
     text-align: justify;
+
+}
+
+.allergies{
+  color: pink;
+  font-weight: bold;
 }
