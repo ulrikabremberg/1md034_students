@@ -1,9 +1,8 @@
 body {
     font-family: "Futura";
-    color:  rgb(2, 50, 20);
+    color: grey;
     font-size: 1.4em;
     line-height: 2.0;
-    text-align: justify;
 
 }
 
@@ -12,11 +11,34 @@ body {
   font-weight: bold;
 }
 
+#header{
+  text-align: center;
+  font-size: 1.4em;
+  line-height: 1;
+
+}
+
 #order{
   background-color: black;
   color: white;
 }
 
 #customer{
+}
 
+input[type="radio"]:checked {
+  box-shadow: 0 0 0 3px black;
+}
+
+input[type]{
+  cursor: pointer;
+}
+
+select{
+  cursor: pointer;
+}
+
+button:hover{
+  background-color: pink;
+  cursor:pointer;
 }
