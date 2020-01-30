@@ -12,6 +12,7 @@ body {
 }
 
 #header{
+  margin: 100px 100px 100px 100px;
   text-align: center;
   font-size: 1.4em;
   line-height: 1;
@@ -22,9 +23,13 @@ body {
   background-color: black;
   line-height: 1.2;
   color: white;
+  margin: 0px 2px 2px 0px;
+  padding: 50px 0px 0px;
 }
 
 #customer{
+  margin: 10px 2px 10px 100px;
+  padding: 50px 0px 0px;
 }
 
 input[type="radio"]:checked {
@@ -47,6 +52,10 @@ select{
 button:hover{
   background-color: pink;
   cursor:pointer;
+}
+
+button{
+  margin: 10px 20px 10px 0px;
 }
 
 table{
