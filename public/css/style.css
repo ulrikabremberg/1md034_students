@@ -27,6 +27,10 @@ body {
   color: black;
 }
 
+#headerimage{
+  opacity: 40%;
+}
+
 
 #order{
   background-color: black;
