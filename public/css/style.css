@@ -11,25 +11,46 @@ body {
   font-style: italic;
 }
 
-#header{
+.header{
+  position: relative;
   margin: 10px 100px 10px 100px;
   text-align: center;
   font-size: 1.4em;
   line-height: 1;
   border: 20px double black;
-
-/*background-color: grey;*/
+  height: 300px;
+  overflow: hidden;
 
 }
 
 .headline{
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   font-size: 2em;
   color: black;
 }
 
-#headerimage{
+/*h1{
+  position: absolute;
+  padding-left: 260px;
+  padding-right: 250px;
+  margin-top: -1;
+}*/
+
+.headerimage{
   opacity: 40%;
+  height: auto;
+  width: 100%;
+  overflow-y: hidden;
 }
+
+
+.underheader{
+  text-align: center;
+}
+
 
 
 #order{
