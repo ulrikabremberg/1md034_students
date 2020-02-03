@@ -41,6 +41,10 @@ margin-right: auto;
 width: 100%;
 }
 
+.image:hover{
+  filter: grayscale(100%);
+}
+
 .allergies{
   color: #8FBC8F;
   font-weight: bold;
@@ -77,6 +81,11 @@ width: 100%;
   height: auto;
   width: 100%;
   overflow-y: hidden;
+  filter: grayscale(100%);
+}
+
+.headerimage:hover{
+  filter: none;
 }
 
 
