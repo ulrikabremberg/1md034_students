@@ -22,3 +22,11 @@ console.log(Chickpea.item());
 let Bean = new Burger("Bean out lately?", "Gluten", "800 kcal", "");
 
 console.log(Bean.item());
+
+let LivsBurger = new Burger("Liv's burger", "Fish", "670 kcal", "");
+
+console.log(LivsBurger.item());
+
+let Mystery = new Burger("Mystery Burger", "?", "? kcal", "");
+
+console.log(Mystery.item());
