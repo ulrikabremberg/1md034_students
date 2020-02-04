@@ -1,12 +1,10 @@
-
-
-function Burger(n, a, k, i){
+function Burger(n, a, k, i) {
   this.name = n;
   this.allergy = a;
   this.kcal = k;
   this.image = i;
 
-  this.item = function(){
+  this.item = function() {
     return this.name + ' ' + this.kcal;
   };
 }
@@ -19,28 +17,21 @@ let Bean = new Burger("Bean out lately?", "Gluten", "800 kcal", "");
 
 let LivsBurger = new Burger("Liv's burger", "Fish", "670 kcal", "");
 
-let Mystery = new Burger("Mystery Burger", "?", "? kcal", "");
+let Mystery = new Burger("Mystery Burger", "", "? kcal", "");
 
 
 let ID = document.getElementById("myID");
 
-let halloumi = document.createElement('h4');
-halloumi.innerHTML = Halloumi.item();
-ID.appendChild(halloumi);
+let menu = [Halloumi, Chickpea, Bean, LivsBurger, Mystery];
 
+for (let i = 0; i < menu.length; i++) {
+  let burger = document.createElement('p');
+  burger.innerHTML = menu[i].item();
+  ID.appendChild(burger);
 
-let chickpea = document.createElement('h4');
-chickpea.innerHTML = Chickpea.item();
-ID.appendChild(chickpea);
-
-let bean = document.createElement('h4');
-bean.innerHTML = Bean.item();
-ID.appendChild(bean);
-
-let mystery = document.createElement('h4');
-mystery.innerHTML = Mystery.item();
-ID.appendChild(mystery);
-
-let liv = document.createElement('h4');
-liv.innerHTML = LivsBurger.item();
-ID.appendChild(liv);
+  if (menu[i].allergy != false) {
+    let allergies = document.createElement('h4');
+    allergies.innerHTML = menu[i].allergy;
+    ID.appendChild(allergies);
+  }
+}

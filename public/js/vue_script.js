@@ -20,17 +20,20 @@ let LivsBurger = new Burger("Liv's burger", "Fish", "670 kcal", "");
 let Mystery = new Burger("Mystery Burger", "?", "? kcal", "");
 
 
+
+
 const heading = new Vue({
   el: '#myID',
   data: {
-    arbitraryVariableName: 'Välj en burgare'
+    arbitraryVariableName: 'Välj en burgare',
+    menu: [Halloumi.item(), Chickpea.item(), Bean.item(), LivsBurger.item(), Mystery.item()]
   }
 })
 
-const burgers = new Vue({
-  el: '#burgerID',
-  data: {
-    burgerList: Halloumi.item() + '\n' + Chickpea.item() + '\n' + Bean.item() + '\n' + Mystery.item() + '\n' + LivsBurger.item()
-  }
 
-})
+/* Html för detta är : <script src="https://vuejs.org/js/vue.js"></script>
+<div id="myID" style="white-space:pre-wrap">
+<h1>{{arbitraryVariableName}}</h1>
+<h4 v-for = "burgers in menu">{{burgers}}
+</h4>
+</div> */
