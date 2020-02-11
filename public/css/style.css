@@ -14,23 +14,23 @@ body {
 
 }
 
-.burger{
+#burger{
   background-color: black;
-  color: #fff;
+  color: #cdcdcd;
   border-radius: 5px;
   padding: 20px;
   font-size: 70%;
 }
 
-.a{
+#a{
   grid-column: 1;
 }
 
-.b{
+#b{
   grid-column: 2;
 }
 
-.c{
+#c{
   grid-column: 3;
 }
 

@@ -3,9 +3,9 @@
 <html lang="en">
 <head>
   <link rel="stylesheet" type="text/css" href="css/style.css">
-  <script src="js/js_script.js"></script>
+  <script src="js/js_script.js" defer></script>
   <script src="https://vuejs.org/js/vue.js"></script>
-  <script src="js/vue_script.js"></script>
+  <script src="js/vue_script.js" defer></script>
   <title>Epic Burger Ordering</title>
   <meta charset="utf-8"/>
 </head>
@@ -19,45 +19,29 @@
       <h2>SELECT BURGER</h2>
       <p> This is where you order the BEST burgers in town. Better than Liv's Burgers!</p>
     </section>
-    <!--section id = "order"-->
-    <div class= "wrapper">
-      <div class= "burger a">
-        <p class= "burgername">Hallo(umi) I like your style!</p>
-        <img class= "image" src ="https://cdn.pixabay.com/photo/2014/05/27/11/31/hamburger-355342_1280.jpg" alt= "Halloumi Burger" title = "My famous halloumi burger">
 
-      </br>
-      <li>Vegetarian</li>
-      <li>Most Popular at Ullis</li>
-      <li>Contains: Avocado, halloumi, rocket and tomatoes </li>
-      <li>Of course served with our sweet potato fries and truffle mayo</li>
-      <li class="allergies">Allergies: Lacto/Ovo, Gluten</li>
+    <div class = "wrapper">
+    <div id = "burger a">
+      <h3>{{name1}} </h3>
+      <img v-bind: src="img1">
+      <ul>
+        <li> {{kcal1}} </li>
+        <li> {{allergy1}} </li>
+      </ul>
     </div>
 
-    <div class= "burger b">
-      <p class= "burgername" >Where the Chick(pea)s at? </p>
-      <img class= "image" src ="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROQc_T-KlFyJ3nh0EHab2SusfwshUMNaLW2VcrR_0uIjqDA3b0aQ&s" alt= "Greek Chickpea Burger" title = "My famous greek burger">
-    </br>
-    <li>Vegetarian</li>
-    <li>Personal favorite</li>
-    <li>Contains: Chickpeas, lettuce, feta cheese </li>
-    <li>Served with our sweet potato fries and hummus</li>
-    <li class="allergies"> Allergies: Lacto/Ovo, Gluten </li>
-
+    <div id = "burger b">
+    <h3>{{name2}} </h3>
+    <img v-bind: src="img2">
+    <ul>
+      <li> {{kcal2}} </li>
+      <li> {{allergy2}} </li>
+    </ul>
   </div>
 
-  <div class= "burger c">
-    <p class= "burgername"> Bean out lately?</p>
-    <img class= "image" src ="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwkqwu7BYs4eO8nmUG0KDy-McHlxfA1OMIBZgrjuukfIxku8Ty&s" alt= "Bean Burger" title = "My famous bean burger" style: "width= 100%">
+    <div id = "burger c"></div>
 
-  </br>
-  <li>Vegetarian</li>
-  <li>For the Bean lover! The vegan choice.</li>
-  <li>Contains: Bean burger, rocket and tomatoes </li>
-  <li>Of course served with our sweet potato fries and vegan mayo</li>
-  <li class="allergies"> Allergies: Gluten</li>
-</div>
-
-</div>
+    </div>
 
 <section id = "customer">
   <h2>Customer Information</h2>
