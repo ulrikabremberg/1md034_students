@@ -1,46 +1,23 @@
 window.onload = function(){
 
-  function Burger(n, a, k, i) {
-    this.name = n;
-    this.allergy = a;
-    this.kcal = k;
-    this.image = i;
-
-    this.item = function() {
-      return this.name + ' ' + this.kcal;
-    };
-  }
-
-  let halloumi = new Burger("Hallo(umi) I like your style", "Gluten and Milk", "760 kcal", "https://cdn.pixabay.com/photo/2014/05/27/11/31/hamburger-355342_1280.jpg");
-
-  let chickpea = new Burger("Where the Chick(pea)s at?", "Gluten", "700 kcal", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROQc_T-KlFyJ3nh0EHab2SusfwshUMNaLW2VcrR_0uIjqDA3b0aQ&s");
-
-  let bean = new Burger("Bean out lately?", "Gluten", "800 kcal", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwkqwu7BYs4eO8nmUG0KDy-McHlxfA1OMIBZgrjuukfIxku8Ty&s");
-
-  let livsBurger = new Burger("Liv's burger", "Fish", "670 kcal", "");
-
-  let mystery = new Burger("Mystery Burger", "?", "? kcal", "");
-
-
-
 
   const vm = new Vue({
     el: '.wrapper',
     data: {
-      name1: halloumi.name,
-      img1: halloumi.image,
-      kcal1: halloumi.kcal,
-      allergy1: halloumi.allergy,
+      name1: food[0].name,
+      img1: food[0].img,
+      kcal1: food[0].kcal,
+      allergy1: food[0].allergy,
 
-      name2: chickpea.name,
-      img2: chickpea.image,
-      kcal2: chickpea.kcal,
-      allergy2: chickpea.allergy,
+      name2: food[1].name,
+      img2: food[1].img,
+      kcal2: food[1].kcal,
+      allergy2: food[1].allergy,
 
-      name3: bean.name,
-      img3: bean.image,
-      kcal3: bean.kcal,
-      allergy3: bean.allergy,
+      name3: food[2].name,
+      img3: food[2].img,
+      kcal3: food[2].kcal,
+      allergy3: food[2].allergy,
 
     }
   });
