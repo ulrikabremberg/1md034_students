@@ -1,4 +1,4 @@
-function Burger(n, a, k, i) {
+/*function Burger(n, a, k, i) {
   this.name = n;
   this.allergy = a;
   this.kcal = k;
@@ -18,7 +18,7 @@ let Bean = new Burger("Bean out lately?", "Gluten", "800 kcal", "https://encrypt
 let LivsBurger = new Burger("Liv's burger", "Fish", "670 kcal", "");
 
 let Mystery = new Burger("Mystery Burger", "", "? kcal", "");
-
+*/
 
 /*let ID = document.getElementById("myID");
 
@@ -38,7 +38,7 @@ for (let i = 0; i < menu.length; i++) {
   }
 }*/
 
-let burgerA = document.getElementById("burger a");
+/*let burgerA = document.getElementById("burger a");
 
 let aName = document.createElement('h3');
 aName.innerHTML = Halloumi.name;
@@ -105,4 +105,4 @@ cInfo.appendChild(cAllergy);
 
 burgerC.appendChild(cName);
 burgerC.appendChild(cImage);
-burgerC.appendChild(cInfo);
+burgerC.appendChild(cInfo);*/
