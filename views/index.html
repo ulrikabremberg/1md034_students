@@ -3,12 +3,13 @@
 <html lang="en">
 <head>
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <title>Ullis' burgers</title>
+  <meta charset="utf-8"/>
   <script type="text/javascript" src="js/menu.js"></script>
   <script src="js/js_script.js" defer></script>
   <script src="https://vuejs.org/js/vue.js"></script>
-  <script src="js/vue_script.js"></script>
-  <title>Epic Burger Ordering</title>
-  <meta charset="utf-8"/>
+  <script src="/socket.io/socket.io.js" defer></script>
+  <script src="js/vue_script.js" defer></script>
 </head>
 <body>
   <main>
@@ -22,66 +23,66 @@
     </section>
 
     <div class = "wrapper">
-    <div id = "burger a">
+      <div id = "burger a">
 
-      <h3>{{name1}} </h3>
-      <img v-bind:src="img1" width="300">
-      <ul>
-        <li> {{kcal1}} </li>
-        <li> {{allergy1}} </li>
-        <input id = "vhallo" type="checkbox" name="burgerH" value="Hallo(umi) I like your style!">
-        <label for="burgerH">Order!</label><br>
-      </ul>
+        <h3>{{name1}} </h3>
+        <img v-bind:src="img1" width="300">
+        <ul>
+          <li> {{kcal1}} </li>
+          <li> {{allergy1}} </li>
+          <input id = "vhallo" type="checkbox" name="burgerH" value="Hallo(umi) I like your style!">
+          <label for="burgerH">Order!</label><br>
+        </ul>
+      </div>
+
+      <div id = "burger b">
+        <h3>{{name2}} </h3>
+        <img v-bind:src="img2" width="300">
+        <ul>
+          <li> {{kcal2}} </li>
+          <li> {{allergy2}} </li>
+          <input id = "vchick" type="checkbox" name="burgerC" value="Where the Chick(pea)s at?">
+          <label for="burgerC">Order!</label><br>
+        </ul>
+      </div>
+
+      <div id = "burger c">
+        <h3>{{name3}} </h3>
+
+        <img v-bind:src="img3" width="300">
+        <ul>
+          <li> {{kcal3}} </li>
+          <li> {{allergy3}} </li>
+          <input id = "vbean" type="checkbox" name="burgerB" value="Bean out lately?">
+          <label for="burgerB">Order!</label><br>
+        </ul>
+
+
+      </div>
+
+
     </div>
 
-    <div id = "burger b">
-    <h3>{{name2}} </h3>
-    <img v-bind:src="img2" width="300">
-    <ul>
-      <li> {{kcal2}} </li>
-      <li> {{allergy2}} </li>
-      <input id = "vchick" type="checkbox" name="burgerC" value="Where the Chick(pea)s at?">
-      <label for="burgerC">Order!</label><br>
-    </ul>
-    </div>
+    <section id = "customer">
+      <h2>Customer Information</h2>
+      <p>Let's provide some necessary info, if you don't mind?</p>
 
-    <div id = "burger c">
-      <h3>{{name3}} </h3>
-
-      <img v-bind:src="img3" width="300">
-      <ul>
-        <li> {{kcal3}} </li>
-        <li> {{allergy3}} </li>
-        <input id = "vbean" type="checkbox" name="burgerB" value="Bean out lately?">
-        <label for="burgerB">Order!</label><br>
-      </ul>
-
-
-    </div>
-
-
-    </div>
-
-<section id = "customer">
-  <h2>Customer Information</h2>
-  <p>Let's provide some necessary info, if you don't mind?</p>
-
-  <p>
-    <label for="fullname">FullName</label><br>
-    <input v-model = "fname" type="text" id="fullname" name="fn" required="required" placeholder="First- and Last name" />
-  </p>
-  <p>
-    <label for="email">Email</label><br>
-    <input v-model = "vemail" type="email" id="email" name="em" required="required" placeholder="E-mail address" />
-  </p>
-  <p>
-    <label for="street">Street name</label><br>
-    <input v-model = "vstreet" type="text" id="street" name="st" required="required" placeholder="Street name" />
-  </p>
-  <p>
+      <p>
+        <label for="fullname">Full Name</label><br>
+        <input v-model = "fname" type="text" id="fullname" name="fn" required="required" placeholder="First- and Last name" />
+      </p>
+      <p>
+        <label for="email">Email</label><br>
+        <input v-model = "vemail" type="email" id="email" name="em" required="required" placeholder="E-mail address" />
+      </p>
+      <!--p>
+      <label for="street">Street name</label><br>
+      <input v-model = "vstreet" type="text" id="street" name="st" required="required" placeholder="Street name" />
+    </p>
+    <p>
     <label for="street">House number</label><br>
     <input v-model = "housenr" type="number" id="nr" name="nr" required="required" placeholder="House number" />
-  </p>
+  </p-->
 
   <p>
     <label for="payment">Payment option</label><br />
@@ -101,10 +102,25 @@
     <input checked = "checked" type="radio"  value = "Other" id="other" name="Gender">Other</option><br/>
   </p>
 
-  <button id = myButtonID type="submit" v-on:click="markDone"><img src="https://freesvg.org/img/Gerald_G_Fast_Food_Lunch_Dinner_%28FF_Menu%29_1.png" width= "50"/> Send Order!</button>
+  <h1> Click in the map! </h1>
+  <a href="/dispatcher" target="_blank">Open dispatcher in new window</a>.
+  <div class="view-box">
+    <div id="dots" v-on:click="displayOrder">
+        <div
+          v-bind:style="{ left: orderObject.x + 'px', top: orderObject.y + 'px'}">
+          {{"T"}}
+        </div>
+    </div>
+  </div>
+</section>
+
+<div id= "myButtonID">
+  <button type="submit" v-on:click="markDone();addOrder()"><img src="https://freesvg.org/img/Gerald_G_Fast_Food_Lunch_Dinner_%28FF_Menu%29_1.png" width= "50"/> Send Order!</button>
+
 
   <p> {{inputArray}} </p>
-</section>
+</div>
+
 
 </main>
 
