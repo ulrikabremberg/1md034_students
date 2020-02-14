@@ -110,6 +110,7 @@ window.onload = function(){
             y: vm.orderObject.y,
           },
           orderItems: [information.firstBurger, information.sndBurger, information.thirdBurger],
+          customerInfo: [information.fname, information.vemail, information.vgender, information.vpayment],
         });
       },
       getNext: function() {
