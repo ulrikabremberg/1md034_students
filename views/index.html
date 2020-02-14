@@ -23,11 +23,14 @@
 
     <div class = "wrapper">
     <div id = "burger a">
+
       <h3>{{name1}} </h3>
-      <img v-bind:src="img1" width="200">
+      <img v-bind:src="img1" width="300">
       <ul>
         <li> {{kcal1}} </li>
         <li> {{allergy1}} </li>
+        <input id = "vhallo" type="checkbox" name="burgerH" value="Hallo(umi) I like your style!">
+        <label for="burgerH">Order!</label><br>
       </ul>
     </div>
 
@@ -37,15 +40,20 @@
     <ul>
       <li> {{kcal2}} </li>
       <li> {{allergy2}} </li>
+      <input id = "vchick" type="checkbox" name="burgerC" value="Where the Chick(pea)s at?">
+      <label for="burgerC">Order!</label><br>
     </ul>
     </div>
 
     <div id = "burger c">
       <h3>{{name3}} </h3>
+
       <img v-bind:src="img3" width="300">
       <ul>
         <li> {{kcal3}} </li>
         <li> {{allergy3}} </li>
+        <input id = "vbean" type="checkbox" name="burgerB" value="Bean out lately?">
+        <label for="burgerB">Order!</label><br>
       </ul>
 
 
@@ -59,20 +67,20 @@
   <p>Let's provide some necessary info, if you don't mind?</p>
 
   <p>
-    <label for="fullname">Full name</label><br>
-    <input type="text" id="fullname" name="fn" required="required" placeholder="First- and Last name" />
+    <label for="fullname">FullName</label><br>
+    <input v-model = "fname" type="text" id="fullname" name="fn" required="required" placeholder="First- and Last name" />
   </p>
   <p>
     <label for="email">Email</label><br>
-    <input type="email" id="email" name="em" required="required" placeholder="E-mail address" />
+    <input v-model = "vemail" type="email" id="email" name="em" required="required" placeholder="E-mail address" />
   </p>
   <p>
     <label for="street">Street name</label><br>
-    <input type="text" id="street" name="st" required="required" placeholder="Street name" />
+    <input v-model = "vstreet" type="text" id="street" name="st" required="required" placeholder="Street name" />
   </p>
   <p>
     <label for="street">House number</label><br>
-    <input type="number" id="nr" name="nr" required="required" placeholder="House number" />
+    <input v-model = "housenr" type="number" id="nr" name="nr" required="required" placeholder="House number" />
   </p>
 
   <p>
@@ -88,18 +96,22 @@
 
   <p>
     <label for="gender">Gender</label><br/>
-    <input type="radio" id="female" value = "1" name="Gender" >Female</option><br/>
-    <input type="radio" id="male" value = "2" name="Gender">Male</option><br/>
-    <input checked = "checked" type="radio" value = "3" id="other" name="Gender">Other</option><br/>
+    <input type="radio" id="female"  value = "Female" name="Gender" >Female</option><br/>
+    <input type="radio" id="male" value = "Male" name="Gender">Male</option><br/>
+    <input checked = "checked" type="radio"  value = "Other" id="other" name="Gender">Other</option><br/>
   </p>
 
-  <button type="submit"><img src="https://freesvg.org/img/Gerald_G_Fast_Food_Lunch_Dinner_%28FF_Menu%29_1.png" width= "50"/> Send Order!</button>
+  <button id = myButtonID type="submit" v-on:click="markDone"><img src="https://freesvg.org/img/Gerald_G_Fast_Food_Lunch_Dinner_%28FF_Menu%29_1.png" width= "50"/> Send Order!</button>
 
-
+  <p> {{inputArray}} </p>
 </section>
 
 </main>
-<footer> Contact: UllisBurgerOnline@hotmail.com <br /> 0735955470 </footer>
+
+<footer>
+
+
+  Contact: UllisBurgerOnline@hotmail.com <br /> 0735955470 </footer>
 </body>
 </html>
 

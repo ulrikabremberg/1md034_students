@@ -21,29 +21,62 @@ window.onload = function(){
 
     }
   });
-/*
-const second = new Vue({
-    el: '#burgerb',
+
+  const information = new Vue({
+    el: '#customer',
     data: {
-      name2: Chickpea.name,
-      img2: Chickpea.image,
-      kcal2: Chickpea.kcal,
-      allergy2: Chickpea.allergy,
+      fname: "",
+      vemail: "",
+      vstreet: "",
+      housenr: "",
+      vgender: "",
+      vpayment: "",
+      inputArray: "",
+      firstBurger: "",
+      sndBurger: "",
+      thirdBurger: "",
 
-    }
-  });
+    },
+    methods: {
+      markDone: function() {
+        console.log("Button clicked");
+        information.fname = " Full name: " + document.getElementById("fullname").value;
+        information.vemail = " Email: " + document.getElementById("email").value;
+        information.vstreet = " Street name: " + document.getElementById("street").value;
+        information.housenr = " Street number: " + document.getElementById("nr").value;
 
-const third = new Vue({
-      el: '#burgerc',
-      data: {
-        name3: Bean.name,
-        img3: Bean.image,
-        kcal3: Bean.kcal,
-        allergy3: Bean.allergy,
+        if (document.getElementById("female").checked){
+          information.vgender = " Gender: " + document.getElementById("female").value;
+        }
+        else if (document.getElementById("male").checked){
+          information.vgender = " Gender: "+ document.getElementById("male").value;
+        }
+        else{
+          information.vgender = " Gender: " + document.getElementById("other").value;
+        }
+
+        information.vpayment= " Payment method: " + document.getElementById("payment").value;
+
+        if (document.getElementById("vhallo").checked) {
+          information.firstBurger = " " + food[0].name + " ordered!";
+        }
+
+        if (document.getElementById("vchick").checked) {
+          information.sndBurger = " " + food[1].name + " ordered!";
+        }
+
+        if (document.getElementById("vbean").checked) {
+          information.thirdBurger = " " + food[2].name + " ordered!";
+        }
+
+
+        information.inputArray = " Customer information: " + [information.fname, information.vemail, information.vstreet, information.housenr, information.vpayment, information.vgender, information.firstBurger, information.sndBurger, information.thirdBurger] ;
+        console.log(information.inputArray);
+
 
       }
-    });
-*/
+    }
+  });
 }
 
 /* Html för detta är : <script src="https://vuejs.org/js/vue.js"></script>
