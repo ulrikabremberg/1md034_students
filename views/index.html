@@ -5,9 +5,9 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <title>Ullis' burgers</title>
   <meta charset="utf-8"/>
-  <script type="text/javascript" src="js/menu.js"></script>
   <script src="js/js_script.js" defer></script>
   <script src="https://vuejs.org/js/vue.js"></script>
+  <script type="text/javascript" src="js/menu.js"></script>
   <script src="/socket.io/socket.io.js" defer></script>
   <script src="js/vue_script.js" defer></script>
 </head>
@@ -22,42 +22,15 @@
       <p> This is where you order the BEST burgers in town. Better than Liv's Burgers!</p>
     </section>
 
-    <div class = "wrapper">
-      <div id = "burger a">
+    <div class = "wrapper" >
+      <div v-for="(burger, index) in food">
+      <h3>{{burger.name}}</h3>
+      <img v-bind:src="burger.img" width="300">
+      <li> {{burger.kcal}} </li>
+      <li> {{burger.allergy}} </li>
 
-        <h3>{{name1}} </h3>
-        <img v-bind:src="img1" width="300">
-        <ul>
-          <li> {{kcal1}} </li>
-          <li> {{allergy1}} </li>
-          <input id = "vhallo" type="checkbox" name="burgerH" value="Hallo(umi) I like your style!">
-          <label for="burgerH">Order!</label><br>
-        </ul>
-      </div>
-
-      <div id = "burger b">
-        <h3>{{name2}} </h3>
-        <img v-bind:src="img2" width="300">
-        <ul>
-          <li> {{kcal2}} </li>
-          <li> {{allergy2}} </li>
-          <input id = "vchick" type="checkbox" name="burgerC" value="Where the Chick(pea)s at?">
-          <label for="burgerC">Order!</label><br>
-        </ul>
-      </div>
-
-      <div id = "burger c">
-        <h3>{{name3}} </h3>
-
-        <img v-bind:src="img3" width="300">
-        <ul>
-          <li> {{kcal3}} </li>
-          <li> {{allergy3}} </li>
-          <input id = "vbean" type="checkbox" name="burgerB" value="Bean out lately?">
-          <label for="burgerB">Order!</label><br>
-        </ul>
-
-
+      <input v-bind:id = "burger.name" type="checkbox" v-bind:value="burger.name">
+      <label>Order!</label><br>
       </div>
 
 

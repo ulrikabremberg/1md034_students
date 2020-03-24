@@ -18,6 +18,20 @@ let food = [
     "kcal": 800,
     "allergy": "Gluten",
     "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwkqwu7BYs4eO8nmUG0KDy-McHlxfA1OMIBZgrjuukfIxku8Ty&s"
+  },
+
+  {
+    "name": "Ullis very best",
+    "kcal": 900,
+    "allergy": "Gluten, Milk",
+    "img": "https://www.max.se/contentassets/ff1439a7a1624cf4a6b068c37d0db25f/product_crispy-no-chicken2.jpg"
+  },
+
+  {
+    "name": "The almost-meat one",
+    "kcal": 1000,
+    "allergy": "Gluten, Milk",
+    "img": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/beyond-burger-nutrition-and-ingredients-1569351590.jpg"
   }
 
 ]

@@ -3,8 +3,7 @@ window.onload = function(){
   'use strict';
   const socket = io();
 
-  /* eslint-disable-next-line no-unused-vars */
-  /* eslint-disable-next-line no-unused-vars */
+
   const vm = new Vue({
     el: '#dots',
     data: {
@@ -23,28 +22,15 @@ window.onload = function(){
         },
       },
     });
-    /* eslint-disable-next-line no-unused-vars */
 
 
     const wrap = new Vue({
       el: '.wrapper',
       data: {
-        name1: food[0].name,
-        img1: food[0].img,
-        kcal1: food[0].kcal,
-        allergy1: food[0].allergy,
 
-        name2: food[1].name,
-        img2: food[1].img,
-        kcal2: food[1].kcal,
-        allergy2: food[1].allergy,
+        food: food,
 
-        name3: food[2].name,
-        img3: food[2].img,
-        kcal3: food[2].kcal,
-        allergy3: food[2].allergy,
-
-      }
+      },
     });
 
     const information = new Vue({
@@ -52,8 +38,6 @@ window.onload = function(){
       data: {
         fname: "",
         vemail: "",
-        //  vstreet: "",
-        //  housenr: "",
         vgender: "",
         vpayment: "",
         inputArray: "",
@@ -64,12 +48,11 @@ window.onload = function(){
 
       },
       methods: {
+
         markDone: function() {
           console.log("Button clicked");
           information.fname = " Full name: " + document.getElementById("fullname").value;
           information.vemail = " Email: " + document.getElementById("email").value;
-          // information.vstreet = " Street name: " + document.getElementById("street").value;
-          //information.housenr = " Street number: " + document.getElementById("nr").value;
 
           if (document.getElementById("female").checked){
             information.vgender = " Gender: " + document.getElementById("female").value;
@@ -83,16 +66,24 @@ window.onload = function(){
 
           information.vpayment= " Payment method: " + document.getElementById("payment").value;
 
-          if (document.getElementById("vhallo").checked) {
+          if (document.getElementById(food[0].name).checked) {
             information.firstBurger = " " + food[0].name + " ordered!";
           }
 
-          if (document.getElementById("vchick").checked) {
+          if (document.getElementById(food[1].name).checked) {
             information.sndBurger = " " + food[1].name + " ordered!";
           }
 
-          if (document.getElementById("vbean").checked) {
+          if (document.getElementById(food[2].name).checked) {
             information.thirdBurger = " " + food[2].name + " ordered!";
+          }
+
+          if (document.getElementById(food[3].name).checked) {
+            information.thirdBurger = " " + food[3].name + " ordered!";
+          }
+
+          if (document.getElementById(food[4].name).checked) {
+            information.thirdBurger = " " + food[4].name + " ordered!";
           }
 
           information.inputArray = "" + [information.fname, information.vemail,/* information.vstreet, information.housenr, */information.vpayment, information.vgender, information.firstBurger, information.sndBurger, information.thirdBurger] ;
@@ -100,33 +91,26 @@ window.onload = function(){
 
 
 
-      },
-      addOrder: function() {
+        },
+        addOrder: function() {
 
-        socket.emit('addOrder', {
-          orderId: this.getNext(),
-          details: {
-            x: vm.orderObject.x,
-            y: vm.orderObject.y,
-          },
-          orderItems: [information.firstBurger, information.sndBurger, information.thirdBurger],
-          customerInfo: [information.fname, information.vemail, information.vgender, information.vpayment],
-        });
+          socket.emit('addOrder', {
+            orderId: this.getNext(),
+            details: {
+              x: vm.orderObject.x,
+              y: vm.orderObject.y,
+            },
+            orderItems: [information.firstBurger, information.sndBurger, information.thirdBurger],
+            customerInfo: [information.fname, information.vemail, information.vgender, information.vpayment],
+          });
+        },
+        getNext: function() {
+          this.counter += 1;
+          return this.counter;
+        },
       },
-      getNext: function() {
-        this.counter += 1;
-        return this.counter;
-      },
-    },
     });
 
 
 
   }
-
-  /* Html för detta är : <script src="https://vuejs.org/js/vue.js"></script>
-  <div id="myID" style="white-space:pre-wrap">
-  <h1>{{arbitraryVariableName}}</h1>
-  <h4 v-for = "burgers in menu">{{burgers}}
-  </h4>
-  </div> */
